@@ -9,17 +9,47 @@
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
+            padding: 10px;
+        }
+        input,label{
+            padding-bottom: 5px;
+            padding-top: 5px;
+            margin: 5px;
         }
     </style>
 </head>
 
 <body>
+    <span><a href="./index.html">Voltar</a></span>
     <h2>Preenchimento de texto</h2>
     <form action="">
         <label for="pnome">Primeiro nome:</label><br>
         <input type="text" name="pnome" id="pnome" value="Gustavo"><br>
         <label for="sobrenome">Sobrenome:</label><br>
         <input type="text" name="sobrenome" id="sobrenome" value="Ferreira"><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+    <h2>Botões radio</h2>
+    <p>Escolha sua linguagem web preferida:</p>
+    <form action="">
+        <input type="radio" id="html" name="fav_language" value="html">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="css">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javaScript" name="fav_language" value="javaScript">
+        <label for="javaScript">javaScript</label>
+    </form>
+    <br>
+    <h2>Preenchimento de checkboxes</h2>
+    <p>Verifique quais itens você possui:</p>
+    <form action="">
+        <input type="checkbox" id="veiculo1" name="veiculo1" value="bicicleta">
+        <label for="veiculo1">Eu tenho uma bicicleta.</label><br>
+        <input type="checkbox" name="veiculo2" id="veiculo2" value="carro">
+        <label for="veiculo2">Eu tenho um carro.</label><br>
+        <input type="checkbox" name="veiculo3" id="veiculo3" value="Barco">
+        <label for="veiculo3">Eu tenho um barco</label><br>
         <input type="submit" value="Enviar">
     </form>
 </body>
