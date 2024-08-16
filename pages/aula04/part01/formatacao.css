@@ -10,3 +10,6 @@ dt{
     font-weight: bold;
     margin-left: 20px;
 }
+ul{
+    list-style-type: none;
+}
