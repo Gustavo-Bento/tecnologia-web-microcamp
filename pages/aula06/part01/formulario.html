@@ -1,0 +1,89 @@
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - Formulario e tabela usando JavaScript</title>
+    <style>
+        form {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            padding: 10px;
+        }
+
+        input,
+        label {
+            padding-bottom: 5px;
+            padding-top: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <span><a href="../index.html">Voltar</a></span>
+    <h2>Aula 06 - Parte 1: Formulario e tabela usando JavaScript</h2>
+    <hr>
+    <form action="" id="linhaForm">
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+        <br><br>
+        <input type="number" name="idade" id="idade" placeholder="Digite sua idade" required>
+        <br><br>
+        <label for="admissao">Admissão</label><input type="date" name="admissao" id="admissao" required>
+        <br><br>
+        <label for="demissao">Demissão</label><input type="date" name="demissao" id="demissao">
+        <br><br>
+        <button type="button" onclick="adicionarLinha()">Adicionar</button>
+        <br><br>
+    </form>
+    <table id="tabelaDados">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Admissão</th>
+                <th>Demissão</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        let proximoId = 1;
+        function adicionarLinha() {
+            const nome = document.getElementById("nome").value;
+            const idade = document.getElementById("idade").value;
+            const admissao = document.getElementById("admissao").value;
+            const demissao = document.getElementById("demissao").value;
+
+            if (nome === '' || idade === '' || admissao === '') {
+                alert("Preencha os valores do formulário!")
+            } else {
+                const tabela = document.getElementById("tabelaDados").getElementsByTagName("tbody")[0];
+
+                const novaLinha = tabela.insertRow();
+
+                const celId = novaLinha.insertCell(0);
+                const celNome = novaLinha.insertCell(1);
+                const celIdade = novaLinha.insertCell(2);
+                const celAdmissao = novaLinha.insertCell(3);
+                const celDemissao = novaLinha.insertCell(4);
+
+                celId.innerHTML = proximoId;
+                celNome.innerHTML = nome;
+                celIdade.innerHTML = idade;
+                celAdmissao.innerHTML = admissao;
+                celDemissao.innerHTML - demissao;
+
+                proximoId++
+
+                document.getElementById("linhaForm").reset();
+            }
+        }
+    </script>
+</body>
+
+</html>
